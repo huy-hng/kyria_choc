@@ -1,65 +1,122 @@
 / {
 	combos {
-		combo__t_lo_7 {
-			bindings = <&combo_layer OS LG(LBKT)>;
-			key-positions = <t_lo 7>;
-			timeout-ms = <35>;
+		combo__30_6 {
+			bindings = <&combo_layer OS LG(N1)>;
+		
+			key-positions = <30 6>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_8 {
-			bindings = <&combo_layer OS LG(RBKT)>;
-			key-positions = <t_lo 8>;
-			timeout-ms = <35>;
+		combo__30_7 {
+			bindings = <&combo_layer OS LG(N2)>;
+		
+			key-positions = <30 7>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_16 {
+		combo__30_8 {
+			bindings = <&combo_layer OS LG(N3)>;
+		
+			key-positions = <30 8>;
+			timeout-ms = <45>;
+			slow-release;
+		};
+
+		combo__30_9 {
+			bindings = <&combo_layer OS LG(N4)>;
+		
+			key-positions = <30 9>;
+			timeout-ms = <45>;
+			slow-release;
+		};
+
+		combo__30_10 {
+			bindings = <&combo_layer OS LG(N5)>;
+		
+			key-positions = <30 10>;
+			timeout-ms = <45>;
+			slow-release;
+		};
+
+		combo__30_11 {
+			bindings = <&combo_layer OS LG(N6)>;
+		
+			key-positions = <30 11>;
+			timeout-ms = <45>;
+			slow-release;
+		};
+
+		combo__30_16 {
 			bindings = <&combo_layer OS LA(TAB)>;
-			key-positions = <t_lo 16>;
-			timeout-ms = <30>;
+		
+			key-positions = <30 16>;
+			timeout-ms = <40>;
 			slow-release;
 		};
 
-		combo__t_lo_18 {
+		combo__30_18 {
 			bindings = <&combo_layer OS LG(H)>;
-			key-positions = <t_lo 18>;
-			timeout-ms = <35>;
+		
+			key-positions = <30 18>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_19 {
+		combo__30_19 {
 			bindings = <&combo_layer OS LG(J)>;
-			key-positions = <t_lo 19>;
-			timeout-ms = <35>;
+		
+			key-positions = <30 19>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_20 {
+		combo__30_20 {
 			bindings = <&combo_layer OS LG(K)>;
-			key-positions = <t_lo 20>;
-			timeout-ms = <35>;
+		
+			key-positions = <30 20>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_21 {
+		combo__30_21 {
 			bindings = <&combo_layer OS LG(L)>;
-			key-positions = <t_lo 21>;
-			timeout-ms = <35>;
+		
+			key-positions = <30 21>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_22 {
+		combo__30_22 {
 			bindings = <&combo_layer OS LG(SEMI)>;
-			key-positions = <t_lo 22>;
-			timeout-ms = <35>;
+		
+			key-positions = <30 22>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 
-		combo__t_lo_28 {
+		combo__30_28 {
 			bindings = <&combo_layer OS LA(LS(TAB))>;
-			key-positions = <t_lo 28>;
-			timeout-ms = <30>;
+		
+			key-positions = <30 28>;
+			timeout-ms = <40>;
+			slow-release;
+		};
+
+		combo__30_35 {
+			bindings = <&combo_layer OS LG(LBKT)>;
+		
+			key-positions = <30 35>;
+			timeout-ms = <45>;
+			slow-release;
+		};
+
+		combo__30_36 {
+			bindings = <&combo_layer OS LG(RBKT)>;
+		
+			key-positions = <30 36>;
+			timeout-ms = <45>;
 			slow-release;
 		};
 

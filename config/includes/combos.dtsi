@@ -52,43 +52,51 @@ combo##name##key1##key2 {                            \
 		// };
 		// 
 
-		left_index {
-			bindings = <____>;
-			key-positions = <i_l i_lb>;
-			timeout-ms = <10>;
-		};
+		// left_index {
+		// 	bindings = <____>;
+		// 	key-positions = <i_l i_lb>;
+		// 	timeout-ms = <10>;
+		// };
 
-		right_index {
-			bindings = <&kp DOT>;
-			key-positions = <i_r i_rb>;
-			timeout-ms = <20>;
-		};
+		// right_index {
+		// 	bindings = <&kp DOT>;
+		// 	key-positions = <i_r i_rb>;
+		// 	timeout-ms = <20>;
+		// };
 
-		right_middle {
-			bindings = <&kp UNDER>;
-			key-positions = <m_r m_rb>;
-			timeout-ms = <20>;
-		};
+		// right_middle {
+		// 	bindings = <&kp UNDER>;
+		// 	key-positions = <m_r m_rb>;
+		// 	timeout-ms = <20>;
+		// };
 
-		right_ring {
-			bindings = <&kp COLON>;
-			key-positions = <ring_r ring_rb>;
-			timeout-ms = <20>;
-		};
+		// right_ring {
+		// 	bindings = <&kp COLON>;
+		// 	key-positions = <ring_r ring_rb>;
+		// 	timeout-ms = <20>;
+		// };
 
-		right_pinky {
-			bindings = <&kp FSLH>;
-			key-positions = <pinky_r pinky_rb>;
-			timeout-ms = <20>;
-		};
+		// right_pinky {
+		// 	bindings = <&kp FSLH>;
+		// 	key-positions = <pinky_r pinky_rb>;
+		// 	timeout-ms = <20>;
+		// };
 		
 
 		//------------------------------------------thumbs------------------------------------------
 
 		left_thumbs {
-			bindings = <____>;
+			bindings = <&combo_mod_layer LSHIFT NAVIPAD>;
+			key-positions = <t_l t_lo>;
+			timeout-ms = <10>;
+			slow-release;
+		};
+
+		left_thumbs2 {
+			bindings = <&combo_mod_layer LSHIFT NAVIPAD>;
 			key-positions = <t_l t_lt>;
-			timeout-ms = <00>;
+			timeout-ms = <10>;
+			slow-release;
 		};
 
 		right_thumbs {
@@ -97,16 +105,17 @@ combo##name##key1##key2 {                            \
 			timeout-ms = <10>;
 		};
 
-		left_inner_thumbs {
-			bindings = <&to_BASE>;
-			key-positions = <t_li i_lbo>;
-			timeout-ms = <10>;
-		};
+		// left_inner_thumbs {
+		// 	// bindings = <&to BASE>;
+		// 	bindings = <____>;
+		// 	key-positions = <t_li i_lbo>;
+		// 	timeout-ms = <10>;
+		// };
 
 		right_inner_thumbs {
-			bindings = <____>;
+			bindings = <&tog DEBUG_SCREEN>;
 			key-positions = <t_ri i_rbo>;
-			timeout-ms = <10>;
+			timeout-ms = <30>;
 		};
 
 		//----------------------------------------both sides----------------------------------------

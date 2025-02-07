@@ -26,6 +26,15 @@
 #define RESET_COLOR SET_HSB(DEFAULT_HUE, SATURATION, BRIGHTNESS)
 
 
+#define MACRO_BEFORE_AFTER(name, behavior, before, after) \
+ZMK_MACRO(name, bindings =						         \
+	<&macro_press behavior >					         \
+	,<&macro_tap before >						         \
+	,<&macro_pause_for_release>					         \
+	,<&macro_tap after >						         \
+	,<&macro_release behavior >					         \
+;)
+
 #define HOLD_COLOR(name, behavior, before, after) \
 ZMK_MACRO(name, bindings =						  \
 	<&macro_press behavior >					  \
@@ -85,22 +94,21 @@ ZMK_MACRO(name, bindings =	   \
 / {
 	macros {
 		// parameterized
-		KP_COLOR(kp_sat,	SET_SAT(67),	 RESET_COLOR)
-		MO_COLOR(mo_cyan,	SET_HUE(CYAN)	 RGB_SOLID, RGB_SWIRL RESET_COLOR)
-		MO_COLOR(mo_indigo, SET_HUE(INDIGO)  RGB_SOLID, RGB_SWIRL RESET_COLOR)
-		MO_COLOR(mo_orange, SET_HB(ORANGE, DIMMED) RGB_SOLID, RGB_SWIRL RESET_COLOR)
-		MO_COLOR(mo_blue,	SET_HB(BLUE, DIMMED) RGB_SOLID, RGB_SWIRL RESET_COLOR)
-		MO_COLOR(mo_white,	SET_SB(0, DIMMED),	 RESET_COLOR)
-		KP_COLOR(kp_white,	SET_SB(0, DIMMED),	 RESET_COLOR)
+		// KP_COLOR(kp_sat,	SET_SAT(67),	 RESET_COLOR)
+		// MO_COLOR(mo_cyan,	SET_HUE(CYAN)	 RGB_SOLID, RGB_SWIRL RESET_COLOR)
+		// MO_COLOR(mo_indigo, SET_HUE(INDIGO)  RGB_SOLID, RGB_SWIRL RESET_COLOR)
+		// MO_COLOR(mo_orange, SET_HB(ORANGE, DIMMED) RGB_SOLID, RGB_SWIRL RESET_COLOR)
+		// MO_COLOR(mo_blue,	SET_HB(BLUE, DIMMED) RGB_SOLID, RGB_SWIRL RESET_COLOR)
+		// MO_COLOR(mo_white,	SET_SB(0, DIMMED),	 RESET_COLOR)
+		// KP_COLOR(kp_white,	SET_SB(0, DIMMED),	 RESET_COLOR)
 
 		// HOLD_COLOR(sl_NAVIPAD,  &sl NAVIPAD,   SET_HUE(INDIGO)  RGB_SOLID, &mo NUMPAD RGB_SWIRL, RESET_COLOR)
-		HOLD_COLOR(sl_NAVIPAD,	&sl NAVIPAD, , &mo NUMPAD)
 
-		TOGL_COLOR(tog_indigo, SET_HUE(INDIGO)	RGB_SOLID)
+		// TOGL_COLOR(tog_indigo, SET_HUE(INDIGO)	RGB_SOLID)
 
-		TOGL_COLOR(tog_NAVIPAD, &tog NAVIPAD   SET_HUE(INDIGO)	RGB_SOLID)
-		TOGL_COLOR(to_BASE,		&to BASE	   RGB_SWIRL RESET_COLOR)
+		// TOGL_COLOR(tog_NAVIPAD, &tog NAVIPAD   SET_HUE(INDIGO)	RGB_SOLID)
 
+		TOGL_COLOR(to_BASE,		&to BASE)
 
 		//--------------Combo Macros--------------
 
@@ -138,6 +146,22 @@ ZMK_MACRO(name, bindings =	   \
 			,<&macro_pause_for_release>
 
 			,<&macro_param_1to1>
+			,<&macro_release &mo 0>
+		;)
+
+		ZMK_MACRO2(combo_mod_layer, bindings =
+			<&macro_param_1to1>
+			,<&macro_press &kp 0>
+
+			,<&macro_param_2to1>
+			,<&macro_press &mo 0>
+
+			,<&macro_pause_for_release>
+
+			,<&macro_param_1to1>
+			,<&macro_release &kp 0>
+
+			,<&macro_param_2to1>
 			,<&macro_release &mo 0>
 		;)
 	};
