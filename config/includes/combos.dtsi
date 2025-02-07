@@ -1,0 +1,139 @@
+#define SAME_HAND_TIMEOUT 40
+#define OTHE_HAND_TIMEOUT 45
+
+#define COMBO_MACRO(name, binding, key1, key2, time) \
+combo##name##key1##key2 {                            \
+	bindings = <binding>;                            \
+	key-positions = <key1 key2>;			         \
+	timeout-ms = <time>;					         \
+	slow-release;                                    \
+}
+
+#define SAME_HAND_CAPITALIZE(capital, key) \
+	COMBO_MACRO(COMBO_CAPITAL_LEFT, &combo_modifier LSHIFT capital, t_l, key, SAME_HAND_TIMEOUT)
+#define OTHE_HAND_CAPITALIZE(capital, key) \
+	COMBO_MACRO(COMBO_CAPITAL_RIGHT, &combo_modifier LSHIFT capital, t_l, key, OTHE_HAND_TIMEOUT)
+
+#define SYMBOL_COMBO(symbol, key) \
+	COMBO_MACRO(COMBO_SYMBOL, &combo_layer SYMBOLS symbol, t_r, key, OTHE_HAND_TIMEOUT)
+
+
+// NOTE: layer specific combos should live in their layer file
+// maybe exept for base layer combos?
+
+/ {
+	combos {
+		compatible = "zmk,combos";
+		//--------------------------------------typing combos---------------------------------------
+
+		//  {
+		// 	bindings = <____>;
+		// 	key-positions = <>;
+		// 	timeout-ms = <10>;
+		// };
+		
+		// combo_shift_ctrl {
+		// 	bindings = <&kp LS(LCTRL)>;
+		// 	key-positions = <thumb_l pinky_lo>;
+		// 	timeout-ms = <40>;
+		// };
+
+		// combo_shift_alt {
+		// 	bindings = <&kp LS(LALT)>;
+		// 	key-positions = <thumb_l pinky_lbo>;
+		// 	timeout-ms = <40>;
+		// };
+
+		// combo_shift_quote {
+		// 	bindings = <&combo_modifier LSHIFT SQT>;
+		// 	key-positions = <thumb_l pinky_ro>;
+		// 	timeout-ms = <45>;
+		// 	slow-release;
+		// };
+		// 
+
+		left_index {
+			bindings = <____>;
+			key-positions = <i_l i_lb>;
+			timeout-ms = <10>;
+		};
+
+		right_index {
+			bindings = <&kp DOT>;
+			key-positions = <i_r i_rb>;
+			timeout-ms = <20>;
+		};
+
+		right_middle {
+			bindings = <&kp UNDER>;
+			key-positions = <m_r m_rb>;
+			timeout-ms = <20>;
+		};
+
+		right_ring {
+			bindings = <&kp COLON>;
+			key-positions = <ring_r ring_rb>;
+			timeout-ms = <20>;
+		};
+
+		right_pinky {
+			bindings = <&kp FSLH>;
+			key-positions = <pinky_r pinky_rb>;
+			timeout-ms = <20>;
+		};
+		
+
+		//------------------------------------------thumbs------------------------------------------
+
+		left_thumbs {
+			bindings = <____>;
+			key-positions = <t_l t_lt>;
+			timeout-ms = <00>;
+		};
+
+		right_thumbs {
+			bindings = <&kp DEL>;
+			key-positions = <t_r t_rt>;
+			timeout-ms = <10>;
+		};
+
+		left_inner_thumbs {
+			bindings = <&to_BASE>;
+			key-positions = <t_li i_lbo>;
+			timeout-ms = <10>;
+		};
+
+		right_inner_thumbs {
+			bindings = <____>;
+			key-positions = <t_ri i_rbo>;
+			timeout-ms = <10>;
+		};
+
+		//----------------------------------------both sides----------------------------------------
+
+		home_thumbs {
+			bindings = <____>;
+			key-positions = <t_l t_r>;
+			timeout-ms = <10>;
+		};
+
+		inner_thumbs {
+			bindings = <____>;
+			key-positions = <t_li t_ri>;
+			timeout-ms = <10>;
+		};
+
+		outer_thumbs {
+			bindings = <____>;
+			key-positions = <t_lo t_ro>;
+			timeout-ms = <10>;
+		};
+
+		//-------------------------------------------misc-------------------------------------------
+		right_pinky_row {
+			bindings = <&ext_power EP_TOG>;
+			key-positions = <p_rto p_ro p_rbo>;
+			timeout-ms = <10>;
+		};
+	};
+};

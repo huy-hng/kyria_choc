@@ -1,0 +1,90 @@
+#define TAP_DANCE(name, key1, key2)        \
+name: name {                               \
+	compatible = "zmk,behavior-tap-dance"; \
+	label = #name;                         \
+	#binding-cells = <0>;                  \
+	bindings = <key1>, <key2>;             \
+}
+
+#define HOLD(name, key1, key2, ...)   \
+name: name {                              \
+	compatible = "zmk,behavior-hold-tap"; \
+	label = #name;                        \
+	#binding-cells = <2>;                 \
+    tapping-term-ms = <200>;              \
+	quick-tap-ms = <200>;                 \
+	flavor = "hold-preferred";            \
+	bindings = <key1>, <key2>;            \
+	__VA_ARGS__                           \
+}
+
+#define INTERRUPT(name, key1, key2, ...)  \
+name: name {                              \
+	compatible = "zmk,behavior-hold-tap"; \
+	label = #name;                        \
+	#binding-cells = <2>;                 \
+    tapping-term-ms = <300>;              \
+	quick-tap-ms = <100>;                 \
+	global-quick-tap;                     \
+	flavor = "tap-unless-interrupted";    \
+	bindings = <key1>, <key2>;            \
+	__VA_ARGS__                           \
+}
+
+#define TAP(name, key1, key2, ...)   \
+name: name {                              \
+	compatible = "zmk,behavior-hold-tap"; \
+	label = #name;                        \
+	#binding-cells = <2>;                 \
+    tapping-term-ms = <120>;              \
+	quick-tap-ms = <150>;                 \
+	global-quick-tap;                     \
+	flavor = "tap-preferred";             \
+	bindings = <key1>, <key2>;            \
+	__VA_ARGS__                           \
+}
+
+/ {
+	behaviors {
+		TAP_DANCE(capsword, &kp_sat LSHIFT, &caps_word);
+		TAP_DANCE(td_navipad, &sl_NAVIPAD, &tog_NAVIPAD);
+		TAP_DANCE(tap_settings, &settings, &tog SETTINGS);
+
+		// mtp: mod tap preferred
+		// TODO: rename mtp to just mt for mod tap and mt to mh for mod hold (ommit the preferred)
+		TAP(mtp_sat,     &kp_sat,   &kp);
+		TAP(mtpr_sat,    &kp_sat,   &kp, retro-tap;);
+		TAP(mtp_white,   &kp_white, &kp);
+		HOLD(mt_sat,     &kp_sat,   &kp);
+		HOLD(lt_cyan,    &mo_cyan,  &kp);
+		HOLD(lt_blue,    &mo_blue,  &kp);
+		// HOLD(ltp_bspc,   &mo_cyan,  &bspc_del);
+		TAP(ltp_bspc,   &mo_cyan,  &bspc_del);
+		INTERRUPT(mti_sat,   &kp_sat,   &kp);
+		INTERRUPT(mti_white, &kp_white, &kp);
+		INTERRUPT(lti_cyan,  &mo_cyan,  &kp);
+		INTERRUPT(lti_blue,  &mo_blue,  &kp);
+		INTERRUPT(lti_bspc,  &mo_cyan,  &bspc_del);
+
+		sym_bsp: sym_bsp {
+			compatible = "zmk,behavior-hold-tap";
+			label = "sym_bsp";
+			#binding-cells = <2>;
+			tapping-term-ms = <500>;
+			quick-tap-ms = <100>;
+			global-quick-tap;
+			flavor = "tap-unless-interrupted";
+			bindings = <&mo>, <&kp>;
+		};
+
+		// skq: skq {
+		// 	compatible = "zmk,behavior-sticky-key";
+		// 	label = "skq";
+		// 	#binding-cells = <2>;
+		// 	bindings = <&kp>;
+		// 	release-after-ms = <1000>;
+		// 	quick-release;
+		// 	ignore-modifiers;
+		// };
+	};
+};
