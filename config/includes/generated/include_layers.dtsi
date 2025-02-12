@@ -11,5 +11,5 @@
 #include "../layers/symbols.keymap"
 #include "../layers/os_layer.keymap"
 #include "../layers/function_media.keymap"
+#include "../layers/mouse.keymap"
 #include "../layers/settings.keymap"
-#include "../layers/encoder_layers.keymap"

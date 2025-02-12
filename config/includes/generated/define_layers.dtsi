@@ -15,10 +15,5 @@
 #define OS 14
 #define FN_MEDIA 15
 #define FN_KEYS 16
-#define SETTINGS 17
-#define ENC_LR 18
-#define ENC_UD 19
-#define ENC_TAB 20
-#define DISPLAY_MENU 21
-#define ENC_MENU 22
-#define LAYER_MENU 23
+#define MOUSE 17
+#define SETTINGS 18
