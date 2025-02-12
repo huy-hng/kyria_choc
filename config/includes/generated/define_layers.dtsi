@@ -17,3 +17,10 @@
 #define FN_KEYS 16
 #define MOUSE 17
 #define SETTINGS 18
+
+#define ENC_LR 19
+#define ENC_UD 20
+#define ENC_TAB 21
+#define DISPLAY_MENU 22
+#define ENC_MENU 23
+#define LAYER_MENU 24
