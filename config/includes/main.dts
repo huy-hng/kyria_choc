@@ -5,6 +5,11 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 900
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#include <dt-bindings/zmk/pointing.h>
+
+
 #include "defines.dtsi"
 #include "finger_positions.dtsi"
 #include "generated/define_layers.dtsi"
@@ -44,8 +49,3 @@
 	time-to-max-speed-ms = <100>;
 	acceleration-exponent = <2>;
 };
-
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 900
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
-
-#include <dt-bindings/zmk/pointing.h>
